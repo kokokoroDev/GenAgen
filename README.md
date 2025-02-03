@@ -20,6 +20,9 @@ A modern, responsive front-end web design using **HTML, CSS, and JavaScript**, e
   
   ![image](https://github.com/user-attachments/assets/d42d44a7-abbb-45e4-8a71-841d635ffe68)
 
+## License  
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
 
 
