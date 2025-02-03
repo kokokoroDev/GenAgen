@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAgen - Services</title>
+    <link rel="stylesheet" href="servicesstyle.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&family=Jost:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+</head>
+<body>
+    <header>
+        <h3><a href="mainpage.html">GenAgen</a></h3>
+        <nav id="nav">
+            <div class="borgir" id="menu-toggle">☰</div>
+            <div id="navlinks" class="navlinks">
+                <div class="borgir-cls" id="close-menu">✖</div>
+                <h3><a href="mainpage.html">GenAgen</a></h3>
+                <a href="mainpage.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <div class="copyright">
+                    <p>	Copyright © 2025 Younes Lahlibi. All rights reserved.</p>
+                </div>
+            </div>
+        </nav>
+        <a href="contact.html">Get Started</a>
+    </header>
+    <div class="main">
+        <div class="head">
+            <h1>Widen Your Sound. Experience <br> ! <span id="arab">المستحيل</span></h1>
+            <p>Transform your music with expert Mixing, Recording, and Mastering. We bring your sound to life, making every track extraordinary.</p>
+        </div>
+        <div class="services">
+            <h1>What We Provide? </h1>
+            <div class="cards">
+                <div class="card" id="recording">
+                        <div class="card-image first"></div>
+                        <div class="card-content">
+                            <h1>Recording</h1>
+                            <p> Capture your music in a pristine environment with high-quality equipment. Our recording services give you the perfect space to bring your ideas to life.</p>
+                            <h5>[Show More]</h5>
+                        </div>
+                </div>
+                <div class="card" id="mixing">
+                    <div class="card-image second"></div>
+                    <div class="card-content">
+                        <h1>Mixing</h1>
+                        <p> We balance and enhance your track, making sure every element shines through, from the vocals to the instrumentation. Get that polished, professional sound that stands out.</p>
+                        <h5>[Show More]</h5>
+                    </div>
+                </div>
+                <div class="card" id="master">
+                    <div class="card-image third"></div>
+                    <div class="card-content">
+                        <h1>Mastering</h1>
+                        <p>Finish your project with our mastering service, ensuring your track is radio-ready and sounds great on any platform, from headphones to large speakers.</p>
+                        <h5>[Show More]</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" style="display: none;"></div>
+
+    <div id="recorder" style="display: none;" class="container">
+        <iframe src="Recording.html" frameborder="0" allowfullscreen></iframe>
+        <button id="quit" ><span class="material-symbols-outlined">X</span></button>
+    </div>
+
+    <div id="mixer" style="display: none;" class="container service-container">
+        <iframe src="Mixing.html" frameborder="0" allowfullscreen></iframe>
+        <button id="quit"><span class="material-symbols-outlined">X</span></button>
+    </div>
+
+    <div id="mastering" style="display: none;" class="container service-container">
+        <iframe src="Mastering.html" frameborder="0" allowfullscreen></iframe>
+        <button id="quit"><span class="material-symbols-outlined">X</span></button>
+    </div>
+
+    <div class="reach">
+        <h1>Let’s Create Music Together</h1>
+        <p>Ready to bring your sound to life? Contact us to discuss how we can turn your ideas into professionally produced tracks that captivate audiences and achieve your goals.</p>
+        <a href="contact.html">Get in Touch Now <span class="material-symbols-outlined">
+            east
+            </span></a>
+    </div>
+    <div class="footer">
+        <nav>
+            <h3><a href="mainpage.html">GenAgen</a></h3>
+            <a href="mainpage.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="copyright">
+            <p>	&#169; COPYRIGHT reserved by Younes Lahlibi</p>
+        </div>
+    </div>
+    <script src="script.js">
+
+    </script>
+    <script>
+        const overlay = document.querySelector(".overlay");
+        const recordService = document.querySelector("#recorder");
+        const mixService = document.querySelector("#mixer");
+        const masterService = document.querySelector("#mastering");
+        const servisat =  document.querySelectorAll(".card");
+        const Quit = document.querySelectorAll("#quit");
+
+
+        function hideServices() {
+            overlay.style.display = "none";
+            recordService.style.display = "none";
+            mixService.style.display = "none";
+            masterService.style.display = "none";
+    }
+
+        servisat.forEach(function(card){
+            console.log(card.id)
+            card.addEventListener('click', function(){
+                if (card.id === 'recording'){  
+                    showService(recordService)
+                    console.log('helo')
+                }
+                if (card.id === 'mixing'){  
+                    console.log('helo')
+                    showService(mixService)
+                }
+                if (card.id === 'master'){  
+                    showService(masterService)
+                }
+
+            })
+        })
+        
+        function showService(service) {
+            overlay.style.display = "block";
+            service.style.display = "flex";
+        }
+
+        Quit.forEach(function (button){
+            button.addEventListener('click', hideServices)
+        })
+        overlay.addEventListener('click', hideServices)
+
+        
+        </script>
+</body>
+</html>

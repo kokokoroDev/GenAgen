@@ -1,0 +1,489 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    background-color: var(--off-white);
+}
+*{
+    box-sizing: border-box;
+}
+:root {
+    --soft-gray: #EAEAEA;
+    --stone-gray: #C2C2C2;
+    
+    --pure-white: #FFFFFF; 
+    
+    --light-silver: #D4D4D4;
+    --ash-gray: #B0B0B0;
+    
+    --dark-gray: #3C3C3C; 
+    --mid-gray: #7A7A7A; 
+    --soft-black: #1F1F1F;
+  }
+.footer,header{
+    padding:0.8em 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .copyright{
+    display: none;
+}
+.footer nav,header .navlinks{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2em;
+    width: 100%;
+    max-width: 35em;
+}
+.footer nav  > a,header .navlinks > a{
+    position: relative;
+    text-decoration: none;
+    font-weight:500;
+    font-size: 1em;
+    display: inline-block;
+    color: black;
+    transition: all 0.3s ease;
+}
+.footer nav >  a:hover,header .navlinks > a:hover {
+    color: var(--stone-gray);
+}
+.footer nav >  a::after, header .navlinks > a::after {
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--stone-gray);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
+}
+
+.footer nav > a:hover::after, header .navlinks > a:hover::after {
+    transform: scaleX(1);
+ }
+
+.footer nav > a:not(:hover)::after ,header .navlinks > a:not(:hover)::after {
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+.footer h3,header .navlinks h3{
+    margin: 0;
+    font-size: 1.7em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.1em;
+}
+.footer h3 a,header .navlinks h3 a{
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    color: var(--soft-black);
+    text-decoration: none;
+}
+
+header > h3,.borgir, .borgir-cls{
+    display: none;
+}
+
+#arab{
+    text-align: center;
+    direction: rtl;
+    font-family: 'Amiri', serif;
+}
+.footer h3,header h3{
+    font-family: "Kanit", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header > a{
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.8em 1.4em;
+    border: 0.15em solid var(--light-silver);
+    border-radius: 1.7em;
+    transition: all 0.2s ease;
+}
+header > a:hover{
+    background-color: var(--light-silver);
+    color: var(--pure-white);
+}
+
+h1,h3,h4{
+    color: var(--dark-gray);
+}
+p{
+    color: var(--mid-gray);
+}
+
+/* Main */
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.head {
+    padding: 1em 5em;
+}
+.main .head > h1{
+    margin-top: 0;
+    font-size: 3.4em;
+    font-weight: 800;
+}
+
+/* Contact us */
+
+.contact{
+    padding: 1em 5em;
+    display: flex;
+    justify-content: space-between;
+}
+.contact .sendmessage{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 0em 1em 0em 0em;
+}
+
+.main .contact .sendmessage .container form .infoss{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.main .contact .sendmessage .container .info{
+    display: flex;
+    margin: 1.3em 0 ;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.main .contact .sendmessage .info label {
+    position: absolute;
+    top: 0.1em;
+    left: 0.8em;
+    font-size: 0.9em;
+    color: var(--dark-gray);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.main .contact .sendmessage .info input:focus + label,.main .contact .sendmessage .info input:not(:placeholder-shown) + label,.main .contact .sendmessage .info textarea:focus + label,.main .contact .sendmessage .info textarea:not(:placeholder-shown) + label {
+    top: -1.3em;
+    font-size: 0.9em; 
+    color: var(--soft-black);
+    font-weight: 700; 
+}
+.main .contact .sendmessage .info input:focus,.main .contact .sendmessage .info textarea:focus{
+    background-color: var(--soft-gray);
+    color: black;
+    border-radius: 0.4em;
+}
+.main .contact .sendmessage .container form .info  input{
+    border: 0;
+    padding: 0.3em 4em 0.3em 0.5em ;
+    color: var(--mid-gray);
+    border-bottom: 0.3em solid var(--soft-black);
+    outline: 0;
+    transition: all 0.3s ease;
+    
+}   
+.main .contact .sendmessage .info.area{
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+.contact .sendmessage .info.area textarea{
+    border: 0;
+    outline: 0;
+    padding: 0em 0em 0em 0.5em ;
+    color: var(--mid-gray);
+    border-bottom: 0.3em solid var(--soft-black);
+    resize: vertical;
+}
+
+.contact .sendmessage .container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact .sendmessage .container form > button {
+    margin-top: 0.4em;
+    display: flex;  
+    align-items: center;
+    justify-content: space-evenly;
+    align-self: flex-end;
+    width: 7.5em;
+    height: 3em;
+    background-color: var(--soft-black);
+    border: 0;
+    color: var(--light-silver);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact .sendmessage .container form > button:hover{
+    background-color: black;
+    color: var(--pure-white);
+}
+
+.contact .sendmessage .container form > button span{
+    font-size: small;
+}
+
+/* reach us */
+
+.main .contact .reachus{
+    border-left: 0.2em solid;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 0.4em 3em;
+    justify-content: space-between;
+}
+
+.contact .reachus .actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contact .reachus .actions h3{
+    margin: 0;
+    font-weight: 700;
+}
+.contact .reachus .actions p{
+    margin-top: 1.2em;
+}
+.contact .reachus .actions a {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    text-decoration: none;
+    color: var(--soft-black);
+    gap: 1em;
+    font-size: 1.1em;
+    margin-left: 0.4em;
+    margin-bottom: 2em;
+    transition: all 0.2s ease;
+}
+.contact .reachus .actions a span{
+    background-color: var(--soft-gray);
+    padding: 0.3em;
+    border-radius: 100%;
+}
+.contact .reachus .actions a:hover{
+    color: #d97e4a;
+}
+.contact .reachus .actions a:hover span{
+    background-color: #f5e5d5;
+}
+
+.contact .reachus .actions .links{
+    display:  flex;
+    gap: 1em;
+    margin-left: 0.4em;
+    margin-top: 0.7em;
+    font-size: 1.5em;
+    height: 1em;
+}
+
+/* end */
+.end{
+    padding: 4em 5em;
+    background-color: var(--soft-black);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.end h1{
+    color: var(--pure-white);
+    font-size: 3.4em;
+    margin: 0.1em;
+}
+.end p{
+    width: 70%;
+    color: var(--ash-gray);
+}
+
+/* footer */
+.footer {
+    padding: 0.1em 5em;
+    justify-content: space-between;
+}
+.footer nav {
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.footer h3,header nav h3{
+    margin: 0;
+    font-size: 1.7em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.1em;
+}
+.footer h3 a,header nav h3 a{
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    color: var(--soft-black);
+    text-decoration: none;
+}
+
+/* MEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDDDDIAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+@media screen and (max-width : 480px) {
+    
+    header{
+        padding:1em;
+    }
+    header > a{
+        display: none;
+    }
+    
+    header > h3{
+        display: block;
+    }
+    header .navlinks > h3{
+        display: none;
+    }
+    header > h3{
+        margin: 0;
+        font-size: 1.7em;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 0.1em;
+    }
+    header > h3 a{
+        width: fit-content;
+        margin: 0;
+        padding: 0;
+        color: var(--soft-black);
+        text-decoration: none;
+    }
+    header .copyright {
+        display: block;        
+        position: absolute;
+        bottom: 0;       
+        width: 100%; 
+    }
+    header .copyright p{
+        text-align: center;
+        font-size: 1em;
+    }
+
+    header .borgir, header .borgir-cls{
+        display: block;
+        align-self: flex-end;
+        padding: 0.3em 1em;
+        margin: 0;
+        font-size: 1.5em;
+    }
+    header .navlinks{
+        z-index: 9999;
+        display: none;
+        flex-direction:column;
+        align-items: flex-start;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--soft-gray);
+    }
+
+    header .navlinks.show{
+        display: flex;
+    }
+
+    header .navlinks > a{
+        margin-top: 1em;
+        padding-inline: 1em;
+        color: black;
+    }
+
+    header .navlinks > a::before{
+        content:'';
+        position: absolute;
+        bottom: -0.8em;
+        left: 0;
+        width: 100vw;
+        height: 1px;
+        background-color: black;
+    }
+
+    .head {
+        padding: 1em;
+    }
+
+    .contact{
+        padding: 1em;
+        flex-direction: column;
+    }
+    .contact .sendmessage{
+        flex-direction: column;
+        width: 100%;
+        padding: 1em;
+    }
+    
+
+    .main .contact .sendmessage .container form .info {
+        width: 100%;
+    }
+
+
+/* reach us */
+    .main .contact .reachus{
+        margin-top: 1em;
+        border-left: 0 ;
+        width: 100%;
+        padding: 0em;
+        justify-content: space-between;
+    }
+    
+    .contact .reachus .actions .links{
+        display:  flex;
+        gap: 0.5em;
+        margin-left: 0.4;
+        margin-top: 0.5em;
+        font-size: 1.5em;
+        height: 1em;
+    }
+
+/* end */
+    .end{
+        padding: 4em 1em;
+        width: 100%;
+        background-color: var(--soft-black);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .end h1{
+        color: var(--pure-white);
+        font-size: 3em;
+        margin: 0.1em;
+    }
+    .end p{
+        width: 100%;
+        color: var(--ash-gray);
+    }
+    .footer{
+        display: none;
+    }
+}
