@@ -15,7 +15,9 @@ A modern, responsive front-end web design using **HTML, CSS, and JavaScript**, e
 
 ## 📸 Screenshots  
   ![image](https://github.com/user-attachments/assets/a0b82a62-88bc-4b2a-99a2-7eeb075a5f51)
+  
   ![image](https://github.com/user-attachments/assets/cc935085-cacb-41af-ab6a-526e252f1672)
+  
   ![image](https://github.com/user-attachments/assets/d42d44a7-abbb-45e4-8a71-841d635ffe68)
 
 
